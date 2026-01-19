@@ -1,9 +1,11 @@
-# Railway Configuration
-# Railway will automatically detect Node.js and use package.json scripts
-
-# No additional configuration needed - Railway auto-detects:
-# - Node.js from package.json
-# - Start command from package.json "start" script
-# - Port from process.env.PORT
-
-# Optional: You can add railway.json for custom config if needed
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "builder": "NIXPACKS"
+  },
+  "deploy": {
+    "startCommand": "npm start",
+    "restartPolicyType": "ON_FAILURE",
+    "restartPolicyMaxRetries": 10
+  }
+}
